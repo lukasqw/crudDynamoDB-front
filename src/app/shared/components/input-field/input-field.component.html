@@ -1,0 +1,12 @@
+<div class="inputField has-error" [ngClass]="classCss">
+  <label [attr.for]="id" *ngIf="label">
+    {{ label }}
+    <fa-icon [icon]="faExclamation"></fa-icon>
+  </label>
+  <input
+    [type]="type"
+    [id]="id"
+    [readonly]="!!isReadOnly"
+    [(ngModel)]="value"
+    [placeholder]="placeholder">
+</div>

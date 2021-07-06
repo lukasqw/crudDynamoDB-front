@@ -1,0 +1,19 @@
+.input-star-ranting {
+  display: grid;
+
+  label {
+    font-size: 0.8rem;
+  }
+
+  div {
+    display: flex;
+    margin-top: 0.8rem;
+  }
+
+  button {
+    color: var(--star);
+    width: 2rem;
+    background: transparent;
+    border: none;
+  }
+}

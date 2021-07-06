@@ -1,0 +1,88 @@
+<!-- <mat-dialog-content>
+  <mat-dialog-actions class="book-form-button" >
+
+  </mat-dialog-actions>
+
+</mat-dialog-content> -->
+
+
+<div class="book-form-header">
+  <p>{{ book == null ? 'Novo Livro' : 'Atualizar Livro' }}</p>
+  <fa-icon [icon]="faTimes" (click)="onCloseDialog()"></fa-icon>
+</div>
+<mat-dialog-content>
+  <div class="book-form-content">
+    <form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+      <div class="book-form-flex">
+        <div class="book-form-cover">
+          <app-cover-book [title]="dataForm.value.title" [coverUrl]="dataForm.value.coverUrl" ></app-cover-book>
+
+          <input type="text" formControlName="coverUrl" name="coverUrl" placeholder="Url da imagem">
+        </div>
+        <div class="book-form-body" >
+          <app-input-field
+            id="title"
+            label="Titulo"
+            [control]="dataForm.get('title')"
+            placeholder="O Senhor dos Anéis"
+            formControlName="title"
+            [classCss]="applyCssError('title')"
+          ></app-input-field>
+
+          <app-input-field
+            id="author"
+            label="Autor"
+            [control]="dataForm.get('author')"
+            placeholder="J.R.R Tolkien"
+            formControlName="author"
+            [classCss]="applyCssError('author')"
+          ></app-input-field>
+
+          <app-input-field
+            id="publisher"
+            label="Editora"
+            [control]="dataForm.get('publisher')"
+            placeholder="J.R.R Tolkien"
+            formControlName="publisher"
+            [classCss]="applyCssError('publisher')"
+          ></app-input-field>
+
+          <!--  -->
+          <app-input-star-ranting
+            label="Classificação"
+            formControlName="stars"
+            [classCss]="applyCssError('stars')"
+          ></app-input-star-ranting>
+
+          <app-text-area-field
+            id="synopsis"
+            label="Sinopse"
+            [control]="dataForm.get('synopsis')"
+            placeholder="Uma historia épica"
+            formControlName="synopsis"
+          ></app-text-area-field>
+
+          <app-text-area-field
+            id="comments"
+            label="Comentário"
+            [control]="dataForm.get('comments')"
+            placeholder="Um ótimo livro"
+            formControlName="comments"
+          ></app-text-area-field>
+        </div>
+      </div>
+      <app-input-chip
+        id="genre"
+        label="Gêneros"
+        [control]="dataForm.get('genre')"
+        placeholder="Novo Gênero"
+        formControlName="genre"
+        [classCss]="applyCssError('genre')"
+      ></app-input-chip>
+    </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions class="buttonActions" align="end">
+  <button (click)="onCloseDialog()" class="btn-white">cancelar</button>
+  <button (click)="onSubmit()" [disabled]="!dataForm.valid">{{ book == null ? 'Salvar' : 'Atualizar' }}</button>
+</mat-dialog-actions>

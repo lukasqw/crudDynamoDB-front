@@ -1,0 +1,31 @@
+<div *ngIf="loaderService.isLoading | async" class="loader-container">
+  <mat-spinner class="loader-spiner"></mat-spinner>
+</div>
+<div class="home">
+  <div class="home-container">
+    <app-header (searchOnSummit)="getBooks($event)"></app-header>
+
+    <div class="home-book-add">
+      <p></p>
+      <button type="button" (click)="openNewBookDialog()">
+        <fa-icon [icon]="faPlus"></fa-icon> Livro
+      </button>
+    </div>
+
+    <div *ngIf="books.length > 0" class="home-grid-container">
+        <app-card-book
+          *ngFor="let book of books"
+          [book]="book"
+          (listBookUpdate)="getBooks('')"
+        >
+        </app-card-book>
+    </div>
+    <div *ngIf="books.length == 0" class="home-grid-not-found">
+      <fa-icon [icon]="faFrown"></fa-icon>
+      <p>Nenhum livro encontrado.</p>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+
+

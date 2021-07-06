@@ -1,0 +1,129 @@
+.card-book-container {
+  width: 13rem;
+  padding: 1.2rem;
+  position: relative;
+  break-inside: avoid-column;
+
+  transition: transform .2s; /* Animation */
+  &:hover {
+    transform: scale(1.1);
+    .card-book-delete {
+      opacity: 1;
+    }
+
+    .card-book-edit {
+      opacity: 1;
+    }
+  }
+
+  .card-book-title {
+    margin-top: 0.5rem;
+    p:first-child {
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--text-title);
+    }
+    p:last-child {
+      font-size: 0.8rem;
+      color: var(--text-body);
+    }
+  }
+
+  .card-book-stars {
+    width: 55px;
+    height: 30px;
+    position: absolute;
+    top: 13rem;
+    left: 10rem;
+
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text-title);
+    font-weight: bold;
+
+    -webkit-box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.2);
+
+    fa-icon {
+      color: var(--star);
+      margin-right: 0.3rem;
+    }
+  }
+
+  .card-book-delete {
+    color: var(--red);
+    opacity: 0.5;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    transition: .2s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  .card-book-edit {
+    color: var(--star);
+    opacity: 0;
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    transition: .2s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  .card-book-cover {
+    cursor: pointer;
+  }
+}
+
+@media(max-width: 500px) {
+  .card-book-container {
+    width: 20rem;
+
+    .card-book-title {
+
+      p:first-child {
+        font-size: 1.5rem;
+      }
+      p:last-child {
+        margin-top: 0.2rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    .card-book-stars {
+      width: 65px;
+      height: 40px;
+      top: 21rem;
+      left: 15rem;
+
+      font-size: 1.5rem;
+
+      fa-icon {
+        margin-right: 0.5rem;
+      }
+    }
+
+    .card-book-delete {
+      opacity: 1;
+      top: 2.25rem;
+      right: 2.25rem;
+      font-size: 1.75rem;
+    }
+
+    .card-book-edit {
+      display: none;
+    }
+  }
+}

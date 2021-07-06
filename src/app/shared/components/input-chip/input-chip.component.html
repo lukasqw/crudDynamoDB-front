@@ -1,0 +1,20 @@
+<div class="input-chip" [ngClass]="classCss">
+  <label [attr.for]="id">
+    Gêneros
+    <fa-icon [icon]="faExclamation"></fa-icon>
+  </label>
+  <mat-chip-list #chipList aria-label="values selection">
+    <mat-chip *ngFor="let value of values" [selectable]="selectable"
+             [removable]="removable" (removed)="remove(value)">
+      {{value}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input [attr.for]="id"
+          [placeholder]="placeholder"
+          [readonly]="!!isReadOnly"
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+</div>

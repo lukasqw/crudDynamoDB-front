@@ -1,0 +1,46 @@
+.inputField {
+  display: grid;
+  color: var(--text-bod);
+
+  label {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+
+    fa-icon {
+      display: none;
+    }
+  }
+
+  input, textarea {
+    border: none;
+    padding: 0.2rem 0.75rem;
+    border-radius: 5px;
+    height: 2.5rem;
+    background-color: #efefef;
+    font-size: 1rem;
+    resize: none;
+  }
+}
+
+.has-required {
+  fa-icon {
+    color: var(--red);
+    font-weight: bold;
+    font-size: 0.8rem;
+    display: contents !important;
+  }
+}
+
+.has-error  {
+  input {
+    border: 1px solid var(--red) !important;
+  }
+
+  label {
+    color: var(--red);
+  }
+}
+
+.has-feedback input {
+  border: 1px solid var(--text-body)
+}

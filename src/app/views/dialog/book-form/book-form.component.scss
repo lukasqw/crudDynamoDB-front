@@ -1,0 +1,89 @@
+.book-form-header {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-title);
+  }
+
+  fa-icon {
+    cursor: pointer;
+  }
+}
+
+.book-form-content {
+
+  .book-form-flex {
+    display: flex;
+
+    .book-form-cover {
+      width: 11rem;
+      margin: 1rem 1rem 0rem 0rem;
+
+      input {
+        width: 11rem;
+        margin-top: 10px;
+        border: none;
+        padding: 0.2rem 0.75rem;
+        height: 2rem;
+        border-radius: 5px;
+        background-color: #efefef;
+        font-size: 1rem;
+        resize: none;
+      }
+    }
+
+    .book-form-body {
+      margin-top: 1rem;
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1rem;
+    }
+  }
+}
+
+.buttonActions {
+  button {
+    border: none;
+    border-radius: 5px;
+    background-color: var(--green);
+    padding: 5px 10px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: .2s;
+  }
+
+  .btn-white {
+    background-color: var(--input-back);
+    color: black;
+    margin-right: 0.5rem;
+  }
+
+  button:hover {
+    filter: brightness(85%)
+  }
+}
+
+@media(max-width: 500px) {
+  .book-form-flex {
+    display: block !important;
+  }
+
+  .book-form-cover {
+    width: 100% !important;
+
+    input {
+      width: 100% !important;
+    }
+  }
+
+  .book-form-body {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+

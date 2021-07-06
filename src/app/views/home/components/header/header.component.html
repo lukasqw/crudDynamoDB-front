@@ -1,0 +1,24 @@
+<div class="header-container">
+  <div class="header-title">
+    <div class="title">
+      <fa-icon [icon]="faBook"></fa-icon>
+      <p>Bookshelf</p>
+    </div>
+    <div class="header-options options-sm">
+      <fa-icon [icon]="faSun"></fa-icon>
+      <fa-icon [icon]="faCog"></fa-icon>
+    </div>
+  </div>
+
+  <form class="header-search" [formGroup]="dataForm" (ngSummit)="onSubmit()">
+    <input type="text" formControlName="searchText" placeholder="Pesquisa">
+    <button type="submit" (click)="onSubmit()">
+      <fa-icon [icon]="faSearch"></fa-icon>
+    </button>
+  </form>
+
+  <div class="header-options">
+    <!-- <fa-icon [icon]="faSun"></fa-icon> -->
+    <fa-icon [icon]="faCog"></fa-icon>
+  </div>
+</div>

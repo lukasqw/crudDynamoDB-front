@@ -1,0 +1,10 @@
+<div class="textAreaField">
+  <label [attr.for]="id" *ngIf="label">{{ label }}</label>
+  <textarea
+    [id]="id"
+    [readonly]="!!isReadOnly"
+    [(ngModel)]="value"
+    [placeholder]="placeholder"
+    cols="30" rows="10">
+  </textarea>
+</div>

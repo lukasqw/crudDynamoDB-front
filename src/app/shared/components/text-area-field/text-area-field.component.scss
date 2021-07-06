@@ -1,0 +1,21 @@
+.textAreaField {
+  display: grid;
+  color: var(--text-bod);
+
+  label {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  textarea {
+    border: none;
+    padding: 0.2rem 0.75rem;
+    border-radius: 5px;
+    height: 2.5rem;
+    background-color: #efefef;
+    font-size: 1rem;
+    resize: none;
+    padding: 10px;
+    height: 100px
+  }
+}

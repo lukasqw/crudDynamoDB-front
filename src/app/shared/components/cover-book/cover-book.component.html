@@ -1,0 +1,5 @@
+<div class="cover-book" [ngStyle]="{'background-color': backColor}">
+  <img *ngIf="(coverUrl != null && coverUrl != '')" src="{{coverUrl}}" alt="">
+  <p *ngIf="(coverUrl == null || coverUrl == '') && (title != null && title != '')">{{title}}</p>
+  <fa-icon *ngIf="(coverUrl == null || coverUrl == '') && (title == null || title == '')" [icon]="faFileImage"></fa-icon>
+</div>
